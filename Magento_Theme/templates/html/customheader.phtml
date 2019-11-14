@@ -1,0 +1,15 @@
+<div class="header-top">
+    <div class="custome-header-item container">
+        <div class="item-header">
+            <ul class="nav">
+                <li class="nav-item"><i class="fa fa-phone" aria-hidden="true"></i><a class="nav-link active" href="#">(+84)1234-5678</a></li>
+                <li class="nav-item"><i class="fa fa-envelope-o" aria-hidden="true"></i><a class="nav-link" href="#">contact@domain.com</a></li>
+            </ul>
+        </div>
+        <div class="item-header right-header">
+            <?php
+                echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header-right-foodfarm')->toHtml();
+            ?>
+        </div>
+    </div>
+</div>

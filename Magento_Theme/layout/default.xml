@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!--Bootstrap css-->
+        <css src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" src_type="url" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" src_type="url" />
+
+        <!--Fontawesome css-->
+        <css src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" src_type="url"/>
+    </head>
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/headerLogo/logo.jpg</argument>
+                <argument name="logo_alt" xsi:type="string">Foodfarm/Customize</argument>
+                <argument name="logo_img_width" xsi:type="number">208</argument>
+                <argument name="logo_img_height" xsi:type="number">40</argument>
+            </arguments>
+        </referenceBlock>
+
+        <move element="minicart" destination="catalog.topnav" after="-"/>
+
+        <referenceContainer name="header.container">
+            <referenceBlock name="header.panel.wrapper" remove="true" />
+        </referenceContainer>
+
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="top.search" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+       
+        <referenceContainer name="header.container">
+            <block class="Magento\Framework\View\Element\Template" name="custom_header" as="custom_header" template="Magento_Theme::html/customheader.phtml"  before="-">
+            </block>
+        </referenceContainer>
+
+        
+        <referenceBlock name="page-footer" remove="true"/>    
+        <referenceContainer name="footer">
+            <referenceBlock name="footer_links" remove="true" />
+            <block class="Magento\Framework\View\Element\Template" name="footer.navigation.menu" before="-" template="Magento_Theme::html/footer_menu.phtml"/>
+        </referenceContainer>
+
+    </body>
+</page>
