@@ -4,6 +4,8 @@
 @color-text:#fff;
 @background-color-hf: #2d2d2f;
 @background-color-nav:#3a3a3c;
+@max-width:1280px;
+
 
 .header.content {
     .logo {
@@ -11,7 +13,10 @@
       z-index: 6;
     }
   }
-
+.inner-container{
+  max-width: @max-width;
+  margin: auto;
+}
 //
 //  Desktop
 //  _____________________________________________
@@ -42,6 +47,13 @@
     .item-header{
       .nav{
         padding: 10px 0;
+        margin: 0;
+        float: left;
+        width: 100%;
+      }
+      .nav.justify-content-end {
+        justify-content: flex-end;
+        display: flex;
       }
       .nav-item {
         display: flex;
@@ -52,9 +64,15 @@
         padding: 0 10px;
         border-right: 1px solid#afafaf;
         height: 15px;
-          i,a {
-            color:#afafaf;
-          }
+        float: left;
+        a{
+          color:#afafaf;
+        }
+
+        i{
+          color:#afafaf;
+          padding-right: 10px;
+        }
       }
       .nav-item:last-child{
         border-right: none;
@@ -112,16 +130,18 @@
         }
 
         .newsfooter-bot{
-          width: 80%;
+          width: 77%;
           float: left;
           
           border-right: 1px dotted#636365;
           border-left: 1px dotted#636365;
           .block.newsletter{
             width: 100%;
-            padding: 0 30px;
-            margin-bottom: 0;
-            margin-top: 40px;
+            .pdnewsletter{
+              padding: 0 30px;
+              margin-bottom: 0;
+              margin-top: 40px;
+            }
             .title{
               display: block;
               float: left;

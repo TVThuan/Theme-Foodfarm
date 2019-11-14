@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-
         <referenceBlock name="footer_links" remove="true" />
         <referenceBlock name="form.subscribe" remove="true" />
         
@@ -9,11 +8,14 @@
             <container name="services_footer_links_container" label="Services Footer Links" htmlTag="div" htmlClass="footer-links" after="cms_footer_links_container" />
         </referenceContainer>
 
-
         <referenceContainer name="services_footer_links_container">
             <container name="footer_services_title_container" htmlTag="div" htmlClass="footer-item">
-                 <block class="Magento\Framework\View\Element\Template" name="footer.navigation.menu" before="-" template="Magento_Cms::html/footer_menu.phtml"/>
+                <block class="Magento\Framework\View\Element\Template" name="footer.navigation.menu" before="-" template="Magento_Cms::html/footer_menu.phtml"/>
             </container>
+        </referenceContainer>
+
+        <referenceContainer name="page.wrapper">        
+            <block class="Magento\Framework\View\Element\Template" name="copyright" template="Magento_Cms::html/copyright.phtml"/>
         </referenceContainer>
     </body>
 </page>
