@@ -77,92 +77,115 @@
 
   //
   // Footer
-  //------------------------------------------------------------
-  @menu__font-color: #666;
-  @menu__transition: all 0.1s ease-out;
-  
-  .footer {
-    &.content {
-      .menu {
-        .lib-vendor-prefix-display(flex);
-        .lib-vendor-prefix-flex-wrap(wrap);
-        box-sizing: border-box;
+  // ------------------------------------------------------------
+    .page-footer{
+      background: @background-color-nav;
+      position: relative;
+      .footer.content{
+        border-top: none;
+      }
+    }
+
+    .footer-links{
+      .footer-item{
         float: left;
         width: 100%;
- 
-        color: @menu__font-color;
- 
-        padding: 30px;
- 
-        &__column {
-          display: block;
-          width: 100%;
+
+        .newsfooter-top{
+          width: 20%;
+          float: left;
+          padding-right: 30px;
+            .footer-lg-text {
+              color: #fff;
+              font-size: 11px;
+              text-align: left;
+            }
+            .footer-lg-info ul li {
+              font-size: 12px;
+                i {
+                  color: #819637;
+                }
+                small{
+                  color: #fff;
+                }
+            }
         }
- 
-        h4 {
-          margin: 0;
-          padding-bottom: 5px;
- 
-          font-size: 22px;
-          font-weight: 300;
-          line-height: 1.2;
-        }
- 
-        ul {
-          margin: 0;
-          padding: 20px 0;
-        }
- 
-        li {
-          font-size: 14px;
-          line-height: 1.5;
-        }
- 
-        a {
-          padding: 3px 0 3px 10px;
- 
-          color: @menu__font-color;
-          .lib-css(transition, @menu__transition);
- 
-          &:hover {
-            padding-left: 20px;
- 
-            color: @color-blue1;
-            text-decoration: none;
+
+        .newsfooter-bot{
+          width: 80%;
+          float: left;
+          
+          border-right: 1px dotted#636365;
+          border-left: 1px dotted#636365;
+          .block.newsletter{
+            width: 100%;
+            padding: 0 30px;
+            margin-bottom: 0;
+            margin-top: 40px;
+            .title{
+              display: block;
+              float: left;
+              width: 30%;
+              color:#fff;
+              text-transform: uppercase;
+              font-size: 16px;
+              font-weight: 700;
+              position: relative;
+              padding-bottom: 10px;
+                  &:before{
+                    content: "";
+                    width: 10%;
+                    height: 2px;
+                    background:#7ea204;
+                    left: 0;
+                    position: absolute;
+                    bottom: 0;
+                  }
+            }
+            .content{
+              width: 70%;
+              float: left;
+            }
+          }
+
+          .links-item{
+            width: 100%;
+            float: left;
+            border-bottom: 1px dotted#636365;
+            display: flex;
+            .footer_column{
+              width: 25%;
+              float: left;
+              padding: 0 30px 40px;
+              border-right: 1px dotted#636365;
+              .title{
+                color:#fff;
+                text-transform: uppercase;
+                font-size: 16px;
+                font-weight: 700;
+                position: relative;
+                padding-bottom: 10px;
+                  &:before{
+                    content: "";
+                    width: 10%;
+                    height: 2px;
+                    background:#7ea204;
+                    left: 0;
+                    position: absolute;
+                    bottom: 0;
+                  }
+              }
+              ul > li {
+                padding: 5px 0;
+                a{
+                  font-size: 12px;
+                  color: #afafaf;
+                }
+              }
+            }
           }
         }
       }
     }
-  }
-
- 
-
-  .footer {
-    &.content {
-      .menu {
-        width: 50%;
-        padding: 0;
- 
-        &__column {
-          display: block;
-          width: 50%;
-        }
-      }
-    }
-  }
-
- 
-
-  .footer {
-    &.content {
-      .menu {
-        ul {
-          &:not(:last-child) {
-            padding-bottom: 30px;
-          }
-        }
-      }
-    }
-  }
 
 }
