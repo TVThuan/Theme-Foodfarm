@@ -1,0 +1,28 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+
+$columnsLimit = $block->getColumnsLimit() ?: 0;
+$_menuHtml = $block->getHtml('level-top', 'submenu', $columnsLimit)
+?>
+
+<nav class="navigation menu-storehome" data-action="navigation">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <?= /* @noEscape */ $_menuHtml?>
+        <?= $block->getChildHtml("catalog.topnav") ?>
+        <li class="search-menu level0" data-block="dropdown">
+            <small class="action" data-trigger="trigger">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </small>
+        </li>
+        <li class="minicart-shopping level0"><?php echo $this->getChildHtml("minicart"); ?></li>
+    </ul>
+</nav>

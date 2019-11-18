@@ -14,19 +14,18 @@
             </arguments>
         </referenceBlock>
 
-        <move element="minicart" destination="catalog.topnav" after="-"/>
-
-        <referenceContainer name="header.container">
-            <referenceBlock name="header.panel.wrapper" remove="true" />
-        </referenceContainer>
-
+        <move element="minicart" destination="catalog.topnav" after="-" />
         <referenceBlock name="report.bugs" remove="true"/>
         <referenceBlock name="top.search" remove="true"/>
        
         <referenceContainer name="header.container">
+            <referenceBlock name="header.panel.wrapper" remove="true" />
             <block class="Magento\Framework\View\Element\Template" name="custom_header" as="custom_header" template="Magento_Theme::html/customheader.phtml"  before="-">
             </block>
         </referenceContainer>
-        
+
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
+        <referenceBlock name="wishlist_sidebar" remove="true" />
+        <referenceBlock name="page.main.title" remove="true"/>
     </body>
 </page>
