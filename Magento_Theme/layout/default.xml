@@ -1,13 +1,10 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <!--Fontawesome css-->
-        <css src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" src_type="url"/>
-    </head>
     <body>
+        <!-- Logo -->
         <referenceBlock name="logo">
             <arguments>
-                <argument name="logo_file" xsi:type="string">images/headerLogo/logo.jpg</argument>
+                <argument name="logo_file" xsi:type="string">images/headerLogo/logo.png</argument>
                 <argument name="logo_alt" xsi:type="string">Foodfarm/Customize</argument>
                 <argument name="logo_img_width" xsi:type="number">208</argument>
                 <argument name="logo_img_height" xsi:type="number">40</argument>
@@ -17,15 +14,34 @@
         <move element="minicart" destination="catalog.topnav" after="-" />
         <referenceBlock name="report.bugs" remove="true"/>
         <referenceBlock name="top.search" remove="true"/>
-       
+
+        <!-- Header -->
         <referenceContainer name="header.container">
             <referenceBlock name="header.panel.wrapper" remove="true" />
-            <block class="Magento\Framework\View\Element\Template" name="custom_header" as="custom_header" template="Magento_Theme::html/customheader.phtml"  before="-">
+            <block class="Magento\Framework\View\Element\Template" name="custom_header" as="custom_header" template="Magento_Theme::html/header/customheader.phtml"  before="-">
             </block>
         </referenceContainer>
 
-        <referenceBlock name="catalog.compare.sidebar" remove="true" />
-        <referenceBlock name="wishlist_sidebar" remove="true" />
         <referenceBlock name="page.main.title" remove="true"/>
+    
+        <!-- Footer -->
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="form.subscribe" remove="true" />
+        
+        <referenceContainer name="footer">
+            <container name="footer_links_container" label="Footer Links" htmlTag="div" htmlClass="footer-links" after="cms_footer_links_container" />
+        </referenceContainer>
+
+        <referenceContainer name="footer_links_container">
+            <container name="footer_title_container" htmlTag="div" htmlClass="footer-item">
+                <block class="Magento\Framework\View\Element\Template" name="footer.navigation.menu" before="-" template="Magento_Theme::html/footer/footer_menu.phtml"/>
+            </container>
+        </referenceContainer>
+
+        <referenceContainer name="page.wrapper">        
+            <block class="Magento\Theme\Block\Html\Footer" name="copyright" template="Magento_Theme::html/footer/copyright.phtml"/>
+        </referenceContainer>
+
+        <move element="copyright" destination="page.wrapper" after="page-footer"/>
     </body>
 </page>

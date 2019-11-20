@@ -1,0 +1,260 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+@toolbar-mode-icon-font-size: 16px;
+@toolbar-background: transparent;
+@toolbar-element-background: @color-gray94;
+@pager-action__background: @toolbar-element-background;
+@pager-action__hover__background: darken(@toolbar-element-background, 7%);
+@pager__font-weight: @font-weight__bold;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .page-products {
+        .columns {
+            padding-top: 60px;
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    .toolbar {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e6e5e5;
+        overflow: hidden;
+        margin: 0 15px;
+        float:left;
+        width: 100%;
+        &:extend(.abs-add-clearfix all);
+        margin-bottom: @indent__l;
+        text-align: center;
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+            border: medium none;
+            height: 40px;
+            text-transform: capitalize;
+            overflow: hidden;
+            padding: 0 0 0 10px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            height: 36px;
+            background: #fff url(../images/icon/caret-down.png) no-repeat scroll 92% center;
+            border: 1px solid #e7e7e7;
+            color: #868686;
+            font-size: 12px;
+            padding: 0 0 0 3px;
+            text-transform: none;
+            border: 1px solid#ddd;
+            color:#8f8f8f;
+            .sorter-options{
+                width: 158px;
+            }
+        }
+        .limiter{
+            .control{
+                width: 50px;
+                padding: 0 10px;
+            }
+        }
+        &-amount {
+            left: 0;
+            line-height: @toolbar-mode-icon-font-size+2;
+            margin: 0;
+            padding: 7px 0;
+            position: absolute;
+            text-align: left;
+            top: 0;
+            vertical-align: middle;
+            .products.wrapper ~ .toolbar & {
+                display: none;
+            }
+        }
+
+        .page-with-filter & {
+            &-amount {
+                position: static;
+            }
+        }
+
+        &-products {
+            .lib-css(background-color, @toolbar-background);
+            .pages {
+                display: none;
+                .products.wrapper ~ & {
+                    display: block;
+                }
+            }
+        }
+        .pages {
+            margin-bottom: @indent__m;
+        }
+    }
+
+    .sorter {
+        float: right;
+        .page-products & {
+            right: @indent__s;
+            top: 0;
+            z-index: 1;
+        }
+        .products.wrapper ~ .toolbar & {
+            display: none;
+        }
+        &-options {
+            margin: 0 @indent__xs 0 7px;
+            width: auto;
+        }
+        &-action {
+            display: none;
+        }
+    }
+
+    .modes {
+        display: none;
+    }
+
+    .limiter {
+        &-options {
+            margin: 0;
+            width: 100%;
+        }
+        &-text{
+            display: none;
+        }
+        &-label {
+            font-weight: 400;
+        }
+       
+        .control {
+            display: inline-block;
+        }
+    }
+}
+
+//
+//  Desctop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .toolbar-products {
+        margin-bottom: 0;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .page-products {
+        .columns {
+            padding-top: 0;
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    .toolbar {
+        &-amount {
+            display: block;
+            float: left;
+            position: static;
+        }
+        .products.wrapper ~ & .pages {
+            float: left;
+            margin-bottom: 0;
+        }
+    }
+
+    .modes {
+        display: inline-block;
+        float: left;
+        margin-right: @indent__base;
+
+        .products.wrapper ~ .toolbar & {
+            display: none;
+        }
+
+        &-label {
+            &:extend(.abs-visually-hidden-desktop-s all);
+        }
+
+        &-mode {
+            .lib-css(box-shadow, @button__shadow);
+            .lib-css(color, @text__color__muted);
+            border: 1px solid @border-color__base;
+            border-right: 0;
+            float: left;
+            font-weight: @font-weight__regular;
+            line-height: 1;
+            padding: 7px 10px;
+            text-align: center;
+
+            .modes-label + & {
+                border-radius: 0;
+            }
+            &:hover {
+                .lib-css(color, @text__color__muted);
+                background: darken(@toolbar-element-background, 2%);
+            }
+            &:last-child {
+                border-radius: 0;
+                border-right: 1px solid @border-color__base;
+            }
+        
+
+            .lib-icon-font(
+            @icon-grid,
+            @_icon-font-size: @toolbar-mode-icon-font-size,
+            @_icon-font-text-hide: true,
+            @_icon-font-color: @text__color__muted,
+            @_icon-font-color-hover: @text__color__muted
+            );
+        }
+    }
+
+    .sorter {
+        .page-products & {
+            margin-right: 18px;
+        }
+    }
+
+    .mode-list {
+        &:before {
+            content: @icon-list;
+        }
+    }
+
+    .limiter {
+        float: right;
+    }
+    
+    .modes-mode{
+        box-shadow: none;
+        &:before{
+        content: '\f009';
+        font-family: "FontAweSome";
+        font-size: 14px;
+        }
+    }
+    .modes-mode.active {
+        border: 1px solid #7da204;
+        &:before{
+        color: #7da204;
+        }
+    }
+    .mode-grid{
+        margin-right: 10px;
+    }
+    .mode-list{
+        &:before{
+        content: '\f03a';
+        }
+    }
+}

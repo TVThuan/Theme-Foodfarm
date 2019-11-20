@@ -1,0 +1,101 @@
+<div class="newsfooter-top">
+    <figure>
+        <img src="<?php echo $this->getViewFileUrl('images/footerLogo/logo.png'); ?>" alt="">
+    </figure>
+    <div class="footer-lg-text"> 
+        <p>
+            Is one of the Vietnamese leading IT outsourcing companies which puts high-quality services and customer’s satisfaction our top priorities. we have increasingly widened our skills and our HR so as to meet all the demands of the customer all over the world with our dedicated services…
+        </p>
+    </div>
+    <div class="footer-lg-info">
+        <ul>
+            <li>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <small>19th Street , City , NY 95822 , USA</small>
+            </li>
+            <li>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <small>19th Street , City , NY 95822 , USA</small>
+            </li>
+            <li>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <small>19th Street , City , NY 95822 , USA</small>
+            </li>
+            <li>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <small>19th Street , City , NY 95822 , USA</small>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="newsfooter-bot">
+    <div class="links-item">
+        <div class="footer_column">
+            <h4 class="title"><?php echo __('Categoryes')?></h4>
+            <ul>
+                <li><a href="#"><?php echo __('Vegetables')?></a></li>
+                <li><a href="#"><?php echo __('Fruits')?></a></li>
+                <li><a href="#"><?php echo __('Animals')?></a></li>
+                <li><a href="#"><?php echo __('Organic Foods')?></a></li>
+            </ul>
+        </div>
+        <div class="footer_column">
+            <h4 class="title"><?php echo __('Information')?></h4>
+            <ul>
+                <li><a href="#" title="<?php echo __('Returns')?>"><?php echo __('Returns')?></a></li>
+                <li><a href="#" title="<?php echo __('Delivery')?>"><?php echo __('Delivery')?></a></li>
+                <li><a href="#" title="<?php echo __('Gift Cards')?>"><?php echo __('Gift Cards')?></a></li>
+                <li><a href="#" title="<?php echo __('Manufacturers')?>"><?php echo __('Manufacturers')?></a></li>
+                <li><a href="#" title="<?php echo __('Discount Code')?>"><?php echo __('Discount Code')?></a></li>
+            </ul>
+        </div>
+        <div class="footer_column">
+            <h4 class="title"><?php echo __('Policies')?></h4>
+            <ul>
+                <li><a href="#" title="<?php echo __('Terms Of Service')?>"><?php echo __('Terms Of Service')?></a></li>
+                <li><a href="#" title="<?php echo __('Privacy')?>"><?php echo __('Privacy')?></a></li>
+                <li><a href="#" title="<?php echo __('Security')?>"><?php echo __('Security')?></a></li>
+                <li><a href="#" title="<?php echo __('Terms Of Use')?>"><?php echo __('Terms Of Use')?></a></li>
+            </ul>
+        </div>
+        <div class="footer_column">
+            <h4 class="title"><?php echo __('Find Us')?></h4>
+            <ul>
+                <li><a href="#" title="<?php echo __('Facebook')?>"><?php echo __('Facebook')?></a></li>
+                <li><a href="#" title="<?php echo __('Twitter')?>"><?php echo __('Twitter')?></a></li>
+                <li><a href="#" title="<?php echo __('Google+')?>"><?php echo __('Google+')?></a></li>
+                <li><a href="#" title="<?php echo __('Youtube')?>"><?php echo __('Youtube')?></a></li>
+                <li><a href="#" title="<?php echo __('Linkedin')?>"><?php echo __('Linkedin')?></a></li>
+            </ul>
+        </div>
+    </div>
+    <?php /** @var \Magento\Newsletter\Block\Subscribe $block */?>
+    <div class="block newsletter">
+        <div class="pdnewsletter">
+            <div class="title"><strong><?= $block->escapeHtml(__('Signup Newsletter')) ?></strong></div>
+            <div class="content">
+                <form class="form subscribe"
+                    novalidate
+                    action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+                    method="post"
+                    data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+                    id="newsletter-validate-detail">
+                    <div class="field newsletter">
+                        <label class="label" for="newsletter"><span><?= $block->escapeHtml(__('Sign Up for Our Newsletter:')) ?></span></label>
+                        <div class="control">
+                            <input name="email" type="email" id="newsletter"
+                                        placeholder="<?= $block->escapeHtmlAttr(__('Enter your email')) ?>"
+                                        data-validate="{required:true, 'validate-email':true}"/>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="action subscribe primary" title="<?= $block->escapeHtmlAttr(__('Subscribe')) ?>" type="submit">
+                            <span><?= $block->escapeHtml(__('Subscribe')) ?></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <?= $block->getChildHtml(); ?>
+        </div>
+    </div>
+</div>
