@@ -1,3 +1,49 @@
 //
 // Common
 // ----------------------------------------------
+& when (@media-common = true) {
+    .block{
+        &-title{
+            font-size: 20px;
+            color:#3a3a3a;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 22px;
+            margin-bottom: 16px;
+            font-weight: 700;
+            font-family: Lato;
+            border-bottom: 1px solid#e6e5e5;
+        }
+    }
+
+    .filter{
+        &-options{
+            &-title{
+                padding-bottom: 17px;
+                position: relative;
+                &:after{
+                    color: #94c347;
+                    font-family: FontAwesome;
+                    content: "\f178";
+                    position: absolute;
+                    top: 1px;
+                    left: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .2s ease-in-out 0s;
+                    -ms-transition: all .2s ease-in-out 0s;
+                    -moz-transition: all .2s ease-in-out 0s;
+                    -o-transition: all .2s ease-in-out 0s;
+                    -webkit-transition: all .2s ease-in-out 0s;
+                }
+                &:hover{
+                    padding-left: 20px;
+                    &:after{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}
