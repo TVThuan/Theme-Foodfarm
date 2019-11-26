@@ -1,17 +1,10 @@
 <div class="header-top">
     <div class="custome-header-item inner-container">
         <div class="item-header">
-            <ul class="nav">
-                <li class="nav-item"><i class="fa fa-phone" aria-hidden="true"></i><a class="nav-link active" href="#">(+84)1234-5678</a></li>
-                <li class="nav-item"><i class="fa fa-envelope-o" aria-hidden="true"></i><a class="nav-link" href="#">contact@domain.com</a></li>
-            </ul>
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header-block-left')->toHtml(); ?>
         </div>
         <div class="item-header right-header">
-            <ul class="nav justify-content-end">
-                <li class="nav-item"><a class="nav-link active" href="#">My Account</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Checkout</a></li>
-            </ul>
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header-block-right')->toHtml(); ?>
         </div>
     </div>
 </div>

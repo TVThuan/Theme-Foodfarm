@@ -5,5 +5,7 @@
 
         <!--Link font-->
         <link rel="stylesheet" type="text/css" src="https://fonts.googleapis.com/css?family=Lato" src_type="url" />
+
+        <link src="js/breadcrumbs.js" src_type="url" />
     </head>
 </page>

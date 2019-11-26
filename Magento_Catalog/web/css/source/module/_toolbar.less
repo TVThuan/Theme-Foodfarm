@@ -27,13 +27,20 @@
         padding-bottom: 20px;
         border-bottom: 1px solid #e6e5e5;
         overflow: hidden;
-        margin: 0 15px;
         float:left;
         width: 100%;
         &:extend(.abs-add-clearfix all);
         margin-bottom: @indent__l;
         text-align: center;
-
+        &:last-child{
+            border-top: 1px solid #e6e5e5;
+            border-bottom: 0;
+            padding-bottom: 0px;
+            padding-top: 20px;
+           .field.limiter {
+                display: none;
+            }
+        }
         select {
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -97,6 +104,34 @@
         }
         .pages {
             margin-bottom: @indent__m;
+            .pages-items{
+                li{
+                    border: 1px solid#ebebeb;
+                    display: inline-block;
+                    height: 36px;
+                    line-height: 35px;
+                    text-align: center;
+                    width: 36px;
+                    margin-right: 9px;
+                    &.current{
+                        border:1px solid #94c347;
+                        color: #94c347;
+                    }
+                    strong.page{
+                        background: none;
+                        color: #94c347;
+                    }
+                    .action{
+                        background: none;
+                        border: none;
+                        margin: 0;
+                        box-shadow:none;
+                    }
+                    a{
+                        color: #000;
+                    }
+                }
+            }
         }
     }
 
@@ -167,9 +202,10 @@
             position: static;
         }
         .products.wrapper ~ & .pages {
-            float: left;
+            text-align: center;
             margin-bottom: 0;
         }
+       
     }
 
     .modes {
@@ -189,7 +225,6 @@
             .lib-css(box-shadow, @button__shadow);
             .lib-css(color, @text__color__muted);
             border: 1px solid @border-color__base;
-            border-right: 0;
             float: left;
             font-weight: @font-weight__regular;
             line-height: 1;
