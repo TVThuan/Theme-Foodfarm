@@ -16,6 +16,139 @@
 
 & when (@media-common = true) {
     //
+    // Product details
+    // -------------------------------------
+    .product-social-links .action.tocompare::before {
+        content: '\e61e';
+        font-family: @icons__font-name;
+    }
+    .product-info-main{
+        .page-title-wrapper{
+            .page-title{
+                font-size: 20px;
+                text-transform: uppercase;
+                color:
+                #3a3a3a;
+                font-weight: 700;
+                margin-top: -2px;
+            }
+        }
+        .product-reviews-summary{
+            .rating-summary{
+                .rating-result > span:before {
+                    color: #94c347;
+                }
+            }
+            .reviews-actions{
+                display: none;
+            }
+        }
+    }
+    
+    .product.info.detailed{
+        .product.data.items{
+            .item.title{
+                &.active{
+                    .switch{
+                        color: #94c347;
+                        position: relative;
+                        &::before{
+                            position: absolute;
+                            content: "";
+                            height: 2px;
+                            width: 87%;
+                            background:
+                            #94c347;
+                            left: 0;
+                            bottom: 0;
+                        }
+                    }
+                }
+                .switch{
+                    background: none;
+                    border: none;
+                    border-top:none;
+                    padding-left: 0;
+                    margin-right: 20px;
+                    text-transform: capitalize;
+                    font-size: 16px;
+                }
+            }
+            .item.content{
+                border: none;
+                padding: 0;
+                padding-top: 30px;
+                border-top: 1px solid #ebebeb;
+                .description{
+                    p{
+                        line-height: 24px;
+                        margin: 0 0 10px;
+                        strong{
+                            width: 100%;
+                            float: left;
+                            font-family: inherit;
+                            color:
+                            #696969;
+                            font-size: 14px;
+                            margin-bottom: 7px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .share-links {
+        border-top: 1px dashed #e6e6e6;
+        margin-top: 71px;
+        padding-top: 28px;
+        .share-email {
+            float: left;
+            margin-top: 7px;
+            a{
+                color:#000;
+                text-decoration: underline;
+                font-size: 14px;
+            }
+        }
+
+        .addthis_sharing_toolbox {
+            text-align: right;
+            margin-right: 0;
+            float: right;
+            p{
+                margin-bottom: 15px;
+                line-height: 22px;
+                color: #868686;
+                float: left;
+                margin-top: 8px;
+                margin-right: 14px;
+            }
+            .f-social{
+                float: left;
+                ul{
+                    padding: 0;
+                }
+                li{
+                    height: 38px;
+                    width: 38px;
+                    text-align: center;
+                    line-height: 34px;
+                    border: 2px solid
+                    #c5c5c5;
+                    display: inline-block;
+                    margin-right: 2px;
+                    a{
+                        font-size: 16px;
+                        color:#afafaf;
+                        -webkit-transition: all .2s ease-in-out 0s;
+                        transition: all .2s ease-in-out 0s;
+                    }
+                }
+            }
+        }
+    }
+    //
     //    Breacrumbs
     //--------------------------------------
     .breadcrumbs-box{
