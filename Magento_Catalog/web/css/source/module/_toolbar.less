@@ -17,7 +17,7 @@
 & when (@media-common = true) {
     .page-products {
         .columns {
-            padding-top: 60px;
+           
             position: relative;
             z-index: 1;
         }
@@ -59,7 +59,6 @@
             border: 1px solid #e7e7e7;
             color: #868686;
             font-size: 12px;
-            padding: 0 0 0 3px;
             text-transform: none;
             border: 1px solid#ddd;
             color:#8f8f8f;
@@ -69,7 +68,7 @@
         }
         .limiter{
             .control{
-                width: 50px;
+                width: 65px;
                 padding: 0 10px;
             }
         }
@@ -291,5 +290,19 @@
         &:before{
         content: '\f03a';
         }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .field.limiter {
+        float: left;
+    }
+    .page-products{
+        .sorter{
+            float: left;
+        }
+    } 
+    .pages-item-next{
+        position: inherit;
     }
 }

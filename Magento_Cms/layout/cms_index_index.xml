@@ -1,17 +1,13 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-
-        <css src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" src_type="url" rel="stylesheet" type="text/css" />
-        <css src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" src_type="url" rel="stylesheet" type="text/css" />
-        <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" src_type="url" />
-
-    </head>
-
     <body>
         <referenceContainer name="page.wrapper">
             <container name="full-columns" htmlTag="div" htmlClass="full-columns" after="main.content" before="footer">
                 <container name="full-main" label="Custom Main Content Container" htmlTag="div" htmlClass="column main"/>
+            </container>
+
+            <container name="newsleter.home" label="NewSletter Container" htmlTag="div" htmlClass="newsletter-home" before="page-footer">
+                <block class="Magento\Framework\View\Element\Template" name="custom-newsleter" template="Magento_Cms::newsleter.phtml" />
             </container>
         </referenceContainer>
 

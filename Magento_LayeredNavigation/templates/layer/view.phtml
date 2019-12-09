@@ -29,7 +29,7 @@
     }'>
         <?php $filtered = count($block->getLayer()->getState()->getFilters()) ?>
         <div class="block-title filter-title" data-count="<?= /* @noEscape */ $filtered ?>">
-            <strong data-role="title"><?= $block->escapeHtml(__('By Category')); ?></strong>
+            <strong data-role="title"><small class="title-pale">By</small><h3 class="title-dark">Category</h3></strong>
         </div>
         <div class="block-content filter-content">
             <?= $block->getChildHtml('state') ?>

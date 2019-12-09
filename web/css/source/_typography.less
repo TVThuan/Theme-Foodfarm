@@ -4,24 +4,48 @@
 
 & when (@media-common = true) {
 	.lib-font-face(
-        @family-name:'Lato',
-        @font-path: '@{baseDir}fonts/Lato-Regular',
-        @font-weight: 400,
-        @font-style: normal
+              @family-name:'Lato',
+              @font-path: '@{baseDir}fonts/Lato/Lato-Regular',
+              @font-weight: 400,
+              @font-style: normal
  	);
 
  	.lib-font-face(
-        @family-name:'Lato-Bold',
-        @font-path: '@{baseDir}fonts/Lato-Bold',
-        @font-weight: 700,
-        @font-style: normal
+              @family-name:'Lato-Bold',
+              @font-path: '@{baseDir}fonts/Lato/Lato-Bold',
+              @font-weight: 700,
+              @font-style: normal
  	);
 
  	.lib-font-face(
-        @family-name:'Lato-Light',
-        @font-path: '@{baseDir}fonts/Lato-Light',
-        @font-weight: 300,
-        @font-style: normal
- 	);
+              @family-name:'Lato-Light',
+              @font-path: '@{baseDir}fonts/Lato/Lato-Light',
+              @font-weight: 300,
+              @font-style: normal
+        );
+        
+       .lib-font-face(
+              @family-name: 'Pacifico',
+              @font-path: '@{baseDir}fonts/Pacifico/Pacifico.ttf',
+              @font-weight: 300,
+              @font-style: normal
+       );
+       
+       @font-face {
+              font-family: 'Willona';
+              src: url('../fonts/Willona/willona-brush.ttf');
+              font-weight: 300;
+              font-style: normal;
+              font-display: swap;
+       }
 
+
+       @font-face {
+              font-family: 'Pacifico';
+              src: url('../fonts/Pacifico/Pacifico.ttf');
+              font-weight: 300;
+              font-style: normal;
+              font-display: swap;
+       }
+         
 }

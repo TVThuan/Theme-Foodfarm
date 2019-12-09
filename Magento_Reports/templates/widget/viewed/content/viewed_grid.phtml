@@ -1,0 +1,77 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * @deprecated
+ */
+
+/**
+ * @var $block \Magento\Reports\Block\Product\Viewed
+ */
+?>
+<?php
+if ($exist = ($block->getRecentlyViewedProducts() && $block->getRecentlyViewedProducts()->getSize())) {
+    $type = 'widget-viewed';
+    $mode = 'grid';
+
+    $type = $type . '-' . $mode;
+
+    $image = 'recently_viewed_products_grid_content_widget';
+    $title = __('Recently Product');
+    $items = $block->getRecentlyViewedProducts();
+
+    $showWishlist = true;
+    $showCompare = true;
+    $showCart = true;
+    $rating = 'short';
+    $description = ($mode == 'list') ? true : false;
+}
+?>
+<?php if ($exist) : ?>
+<div class="block widget block-viewed-products-<?= $block->escapeHtmlAttr($mode) ?>">
+    <div class="block-title">
+        <strong role="heading" aria-level="2"><?= $block->escapeHtml($title) ?></strong>
+    </div>
+    <div class="block-content">
+        <?= '<!-- ' . $block->escapeHtml($image) . '-->' ?>
+        <div class="products-<?= $block->escapeHtmlAttr($mode) ?> <?= $block->escapeHtmlAttr($mode) ?>">
+            <ol class="product-items <?= $block->escapeHtmlAttr($type) ?>">
+                <?php foreach ($items as $_item) : ?>
+                <li class="product-item">
+                    <div class="product-item-info">
+                        <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-photo">
+                            <?= $block->getImage($_item, $image)->toHtml() ?>
+                        </a>
+                        <div class="product-item-details">
+                            <strong class="product-item-name">
+                                <a title="<?= $block->escapeHtmlAttr($_item->getName()) ?>"
+                                    href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
+                                    class="product-item-link">
+                                    <?= $block->escapeHtml($_item->getName()) ?>
+                                </a>
+                            </strong>
+                            <?= $block->getReviewsSummaryHtml($_item, $rating) ?>
+                            <?= /* @noEscape */ $block->getProductPriceHtml(
+                                        $_item,
+                                        \Magento\Catalog\Pricing\Price\FinalPrice::PRICE_CODE,
+                                        \Magento\Framework\Pricing\Render::ZONE_ITEM_LIST,
+                                        [
+                                            'price_id_suffix' => '-' . $type
+                                        ]
+                                    ) ?>
+
+
+
+                        </div>
+                    </div>
+                </li>
+                <?php endforeach ?>
+            </ol>
+        </div>
+        <?= $block->getPagerHtml() ?>
+    </div>
+</div>
+<?php endif;?>

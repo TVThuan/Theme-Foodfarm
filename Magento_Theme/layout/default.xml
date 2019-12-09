@@ -27,7 +27,11 @@
 
         <referenceContainer name="page.wrapper">
             <container name="breadcrumbs_after_nav" label="Breadcrumbs After Navigation Container" htmlTag="div" htmlClass="breadcrumbs-box" before="main.content"/>
+
+            
         </referenceContainer>
+
+       
         <!-- Footer -->
         <referenceBlock name="footer_links" remove="true" />
         <referenceBlock name="form.subscribe" remove="true" />
@@ -38,10 +42,7 @@
             </container>
         </referenceContainer>
 
-        <referenceContainer name="page.wrapper">        
-            <block class="Magento\Theme\Block\Html\Footer" name="copyright" template="Magento_Theme::html/footer/copyright.phtml"/>
-        </referenceContainer>
 
-        <move element="copyright" destination="page.wrapper" after="page-footer"/>
+       
     </body>
 </page>

@@ -11,6 +11,7 @@
 //  Otherwise this theme won't be available for parent nesting
 //  All new variables should be placed in local theme lib or local theme files
 
+@import '../lib/owl.carousel/owl.carousel.less';
 
 //
 //  Typography
@@ -18,9 +19,16 @@
 //Responsive file
 @price-size-desktop :#000;
 @price-color:#000;
+@active__color:#f6f6f6;
+@icon-compare-full: '\f074';
+@icon-compare-empty: '\f074';
+@icon-wishlist-full: '\f004';
+@icon-wishlist-empty: '\f004';
+
 //  Fonts
 @icons__font-path: '@{baseDir}fonts/Luma-Icons';
-@icons__font-name: 'luma-icons';
+@icons__font-name: 'FontAweSome';
+@font-size:14px;
 
 //  Color nesting
 @panel__background-color: @color-gray-light0;
@@ -299,4 +307,40 @@
 @copyright__background-color: @color-gray-middle4;
 
 
+//
+//Font
+//
+@font-family-name__base: 'Lato','Willona','Pacifico';
+@font-family-name__regular: 'Lato','Willona','Pacifico';
+@font-family__base: @font-family-name__base, @font-family__sans-serif;
+@font-family__condensed: 'Lato','Willona','Pacifico', sans-serif;
+@font-family__regular: 'Lato','Willona','Pacifico', sans-serif;
+
+body {
+  .lib-css(background-color, @page__background-color);
+  font-family:'Lato','Willona','Pacifico';
+  font-size: @font-size;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.page-layout-2columns-right{
+  .column.main{
+    width: 75%;
+  }
+  .sidebar-main , .sidebar-additional{
+    width: 25%;
+  }
+}
+
+.page-layout-2columns-left{
+  .column.main{
+    width: 75%;
+  }
+  .sidebar-main , .sidebar-additional{
+    width: 25%;
+  }
+}
 

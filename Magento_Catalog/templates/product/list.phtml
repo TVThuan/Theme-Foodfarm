@@ -64,7 +64,9 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                        tabindex="-1">
                        <?php if($_product->getData('is_featured')): ?>
                             <div class="hot-featured">
-                                <?php echo __('Hot'); ?>
+                                <span class="hot-product-icon">
+                                    <?php echo __('Hot'); ?>
+                                </span>
                             </div>
                         <?php endif; ?>
                        <?php
@@ -80,7 +82,7 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                                     if ($today >= strtotime($specialPriceFromDate) && $today <= strtotime($specialPriceToDate) || $today >= strtotime($specialPriceFromDate) && is_null($specialPriceToDate)) { ?>
                                         <div class="label-product label-sale">
                                             <span class="sale-product-icon">
-                                                <?php if($sale) { echo $sale.'%'; } else {echo __('Sale');} ?>
+                                                <?php echo __('Sale'); ?>
                                             </span>
                                         </div>
                                     <?php } 
